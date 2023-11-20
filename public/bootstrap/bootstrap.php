@@ -11,10 +11,11 @@ $twig = $template->init();
  */
 $callController = new App\Controllers\Controller;
 $calledController = $callController->controller();
-
-
-
+dump($calledController);
 $controller = new $calledController();
+$controller->setTwig($twig);
+
+
 /**
  * Chamando o metodo digitado na URL
  * http://localhost:8080/Controller/Method
