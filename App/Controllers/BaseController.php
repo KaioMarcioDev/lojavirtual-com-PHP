@@ -6,7 +6,7 @@ class BaseController{
 
     public function setTwig($twig){
 
-        $this->$twig = $twig;
+        $this->twig = $twig;
 
     }
 }

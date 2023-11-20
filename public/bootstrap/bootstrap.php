@@ -11,7 +11,6 @@ $twig = $template->init();
  */
 $callController = new App\Controllers\Controller;
 $calledController = $callController->controller();
-dump($calledController);
 $controller = new $calledController();
 $controller->setTwig($twig);
 
