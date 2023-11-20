@@ -1,5 +1,11 @@
 <?php
 use App\Classes\Template;
+use App\Classes\Parameters;
+
+$paramenters = new Parameters;
+
+dump($paramenters->explodeParameter());
+
 
 $template = new Template;
 $twig = $template->init();
@@ -12,7 +18,7 @@ $twig = $template->init();
 $callController = new App\Controllers\Controller;
 $calledController = $callController->controller();
 $controller = new $calledController();
-$controller->setTwig($twig);
+//$controller->setTwig($twig);
 
 
 /**
@@ -23,7 +29,9 @@ $controller->setTwig($twig);
 $callMethod = new App\Controllers\Method;
 $method = $callMethod->Method($controller);
 
+
 /**
  * Chamando o controller atravez da classe controller e method
  */
 $controller->$method();
+

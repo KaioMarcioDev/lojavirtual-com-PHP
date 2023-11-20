@@ -16,13 +16,14 @@ class Method{
     private function getMethod(){
         if(!$this->uri->emptyUri()){
             $explodeUri = array_filter(explode('/',$this->uri->getUri()));
-            return (isset($explodeUri[2]))? $explodeUri[2]: null;
+            return (isset($explodeUri[2]))? $explodeUri[2] : DEFAULT_METHOD;
         }
     }
 
     public function Method($object){
         if(method_exists($object, $this->getMethod())){
             return $this->getMethod();
+            
         }
         return DEFAULT_METHOD;
     }
